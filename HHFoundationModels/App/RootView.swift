@@ -18,8 +18,10 @@ struct RootView: View {
         
         #if os(macOS)
         FilePickerView(
-            visionService: visionService,
-            foundationService: foundationService
+            vm: FilePickerViewModel(
+                visionService: visionService,
+                foundationService: foundationService
+            )
         )
         #elseif os(iOS)
         CameraView(

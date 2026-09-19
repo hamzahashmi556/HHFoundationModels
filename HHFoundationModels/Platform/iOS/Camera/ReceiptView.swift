@@ -8,12 +8,13 @@
 
 import SwiftUI
 
+#if os(macOS)
 struct ReceiptView: View {
 
     let receipt: Receipt
 
     var body: some View {
-        NavigationStack {
+//        NavigationStack {
             List {
 
                 // MARK: - Merchant
@@ -90,10 +91,10 @@ struct ReceiptView: View {
                     }
                 }
             }
-            .navigationTitle("Receipt")
-            .toolbarTitleDisplayMode(.inline)
+//            .navigationTitle("Receipt")
+//            .toolbarTitleDisplayMode(.inline)
 //            .navigationBarTitleDisplayMode(.inline)
-        }
+//        }
     }
 
     private func summaryRow(
@@ -114,3 +115,4 @@ struct ReceiptView: View {
         }
     }
 }
+#endif
